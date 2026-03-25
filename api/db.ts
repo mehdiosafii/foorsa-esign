@@ -64,8 +64,21 @@ export async function ensureTables(): Promise<void> {
   `);
 }
 
-// Helper to verify admin password
+// Helper to verify admin password — uses timingSafeEqual to prevent timing attacks
 export function verifyAdminPassword(password: string): boolean {
-  const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'FoorsaContract2026!';
-  return password === ADMIN_PASSWORD;
+  const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || '';
+  if (!ADMIN_PASSWORD) return false;
+  const { timingSafeEqual } = require('crypto');
+  try {
+    const bufA = Buffer.from(password);
+    const bufB = Buffer.from(ADMIN_PASSWORD);
+    if (bufA.length !== bufB.length) {
+      // Still consume equal time before returning false
+      timingSafeEqual(bufA, Buffer.alloc(bufA.length));
+      return false;
+    }
+    return timingSafeEqual(bufA, bufB);
+  } catch {
+    return false;
+  }
 }
