@@ -118,7 +118,7 @@ A modern e-signature contract platform for Foorsa (Opportunity Solutions SARL) w
 3. **Create `.env` file**
    ```env
    DATABASE_URL=postgresql://postgres.cetxjzzoswrcykhcxwai:FoorsaReward2026SecureDb@aws-1-eu-west-2.pooler.supabase.com:6543/postgres
-   ADMIN_PASSWORD=FoorsaContract2026!
+   ADMIN_PASSWORD=[REDACTED - set via ADMIN_PASSWORD env var]
    ```
 
 4. **Run development server**
@@ -177,7 +177,7 @@ CREATE TABLE IF NOT EXISTS esign_sellers (
 Set these on Vercel (already configured for production):
 
 - `DATABASE_URL` - Supabase PostgreSQL connection string
-- `ADMIN_PASSWORD` - Admin dashboard password (default: `FoorsaContract2026!`)
+- `ADMIN_PASSWORD` - Admin dashboard password (default: `[REDACTED - set via ADMIN_PASSWORD env var]`)
 
 ## 🌐 Usage
 
@@ -188,7 +188,7 @@ Set these on Vercel (already configured for production):
 
 ### For Admins
 1. **Access admin**: https://foorsacontract.vercel.app?secret_admin=1
-2. **Login**: Enter password `FoorsaContract2026!`
+2. **Login**: Enter password `[REDACTED - set via ADMIN_PASSWORD env var]`
 3. **Manage**: View contracts, manage sellers, update settings
 
 ### For Sellers

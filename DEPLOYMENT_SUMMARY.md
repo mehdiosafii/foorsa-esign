@@ -96,7 +96,7 @@ esign_sellers (
 ### Environment Variables (Set on Vercel)
 ```
 DATABASE_URL=postgresql://postgres.cetxjzzoswrcykhcxwai:FoorsaReward2026SecureDb@aws-1-eu-west-2.pooler.supabase.com:6543/postgres
-ADMIN_PASSWORD=FoorsaContract2026!
+ADMIN_PASSWORD=[REDACTED - set via ADMIN_PASSWORD env var]
 ```
 
 ---
@@ -139,7 +139,7 @@ POST /api/auth/admin { password }
 | Link | Action |
 |------|--------|
 | `https://foorsacontract.vercel.app?secret_admin=1` | Opens admin login |
-| Password: `FoorsaContract2026!` | Login to dashboard |
+| Password: `[REDACTED - set via ADMIN_PASSWORD env var]` | Login to dashboard |
 
 ### For Sellers
 1. Admin creates seller account (Settings → Sellers)
@@ -232,7 +232,7 @@ api/
 | Vercel deployment | ✅ | Live at foorsacontract.vercel.app |
 | Same pricing logic | ✅ | Monthly auto-pricing from constants.tsx |
 | PDF generation | ✅ | Client-side html2canvas + jsPDF |
-| Admin password | ✅ | FoorsaContract2026! |
+| Admin password | ✅ | [REDACTED - set via ADMIN_PASSWORD env var] |
 
 ### Additional Features Delivered
 
